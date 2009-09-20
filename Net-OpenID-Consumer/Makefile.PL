@@ -1,4 +1,4 @@
-use 5.005; #for cpantesters
+use 5.006; #for cpantesters
 use ExtUtils::MakeMaker;
 WriteMakefile1('NAME' => 'Net::OpenID::Consumer',
                'VERSION_FROM' => 'lib/Net/OpenID/Consumer.pm',
@@ -17,7 +17,8 @@ WriteMakefile1('NAME' => 'Net::OpenID::Consumer',
                    'Test::More'     => 0,
                },
                'LICENSE' => 'perl',
-               'MIN_PERL_VERSION'  => 5.005, #fields.pm
+               'MIN_PERL_VERSION'  => 5.006, #Since Net::OpenID::Common requires 5.6,
+                 #there is no need  to require lesser version
                ABSTRACT_FROM => 'lib/Net/OpenID/Consumer.pm',
                AUTHOR     => 'Brad Fitzpatrick <brad@danga.com>',
                META_MERGE => {
@@ -29,7 +30,7 @@ WriteMakefile1('NAME' => 'Net::OpenID::Consumer',
              );
 
 
-sub WriteMakefile1 {
+sub WriteMakefile1 { #Written by Alexandr Ciornii
         my %params=@_;
         my $eumm_version=$ExtUtils::MakeMaker::VERSION;
         $eumm_version=eval $eumm_version;
