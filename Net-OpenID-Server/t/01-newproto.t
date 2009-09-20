@@ -2,7 +2,7 @@
 
 use strict;
 use Test::More tests => 150;
-use Data::Dumper;
+#use Data::Dumper;
 use Net::OpenID::Server;
 use Crypt::DH;
 use Digest::SHA1 qw(sha1 sha1_hex);
