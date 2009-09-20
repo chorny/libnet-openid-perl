@@ -1,3 +1,4 @@
+use 5.005; #for cpantesters
 use ExtUtils::MakeMaker;
 WriteMakefile1('NAME' => 'Net::OpenID::Consumer',
                'VERSION_FROM' => 'lib/Net/OpenID/Consumer.pm',
@@ -16,7 +17,7 @@ WriteMakefile1('NAME' => 'Net::OpenID::Consumer',
                    'Test::More'     => 0,
                },
                'LICENSE' => 'perl',
-               'MIN_PERL_VERSION'  => 5.006, #warnings.pm
+               'MIN_PERL_VERSION'  => 5.005, #fields.pm
                ABSTRACT_FROM => 'lib/Net/OpenID/Consumer.pm',
                AUTHOR     => 'Brad Fitzpatrick <brad@danga.com>',
                META_MERGE => {
