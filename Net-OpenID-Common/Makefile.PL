@@ -1,3 +1,4 @@
+use 5.006; #for cpantesters
 use ExtUtils::MakeMaker;
 WriteMakefile1( 'NAME' => 'Net::OpenID::Common',
                'VERSION_FROM' => 'lib/Net/OpenID/Common.pm',
@@ -11,12 +12,22 @@ WriteMakefile1( 'NAME' => 'Net::OpenID::Common',
                    'MIME::Base64'    => 0,
                    'Math::BigInt'    => 0,
                },
-               ($] >= 5.005 ?
-                (ABSTRACT_FROM => 'lib/Net/OpenID/Common.pm',
-                 AUTHOR     => 'Martin Atkins <mart@degeneration.co.uk>') : ()),
-               );
+               'BUILD_REQUIRES' => {
+                   'Test::More'     => 0,
+               },
+               'LICENSE' => 'perl',
+               'MIN_PERL_VERSION'  => 5.006, #warnings.pm, our
+               ABSTRACT_FROM => 'lib/Net/OpenID/Common.pm',
+               AUTHOR     => 'Martin Atkins <mart@degeneration.co.uk>',
+               META_MERGE => {
+                   resources => {
+                       repository => 'http://github.com/apparentlymart/libnet-openid-perl/tree',
+                   },
+                   keywords => ['openid'],
+               },
+              );
 
-sub WriteMakefile1 {
+sub WriteMakefile1 { #Written by Alexandr Ciornii
         my %params=@_;
         my $eumm_version=$ExtUtils::MakeMaker::VERSION;
         $eumm_version=eval $eumm_version;
