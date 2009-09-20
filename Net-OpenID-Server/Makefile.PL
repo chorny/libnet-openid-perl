@@ -6,6 +6,7 @@ WriteMakefile( 'NAME' => 'Net::OpenID::Server',
                    'MIME::Base64'   => 0,
                    'Digest::SHA1'   => 0,
                    'Crypt::DH'      => 0.05,
+                   'Math::BigInt'   => 0,
                },
                ($] >= 5.005 ?
                 (ABSTRACT_FROM => 'lib/Net/OpenID/Server.pm',
